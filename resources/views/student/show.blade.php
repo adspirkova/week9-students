@@ -27,14 +27,19 @@
     <section class="detention-assign">
         <h2>Give detention</h2>
 
-        <form action="" method="post">
+        {{-- Q11 --}}
 
+        <form action="{{action('StudentController@detention')}}" method="post">
+            {{ csrf_field() }}
+            <input type="hidden" name="student_id" value="{{$student->id}}">
             <input type="text" name="subject" placeholder="Reason for detention">
 
             <textarea name="description" placeholder="Thorough description"></textarea>
 
             <input type="submit" value="Send an owl">
         </form>
+
+        {{-- end of Q11 --}}
     </section>
 
 </div>
